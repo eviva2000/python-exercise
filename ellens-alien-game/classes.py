@@ -26,6 +26,9 @@ class Alien:
         self.health = 3
         Alien.total_aliens_created += 1
 
+    def hit(self):
+        self.health = max(0, self.health - 1)
+
 
 def new_aliens_collection(coordinates):
     return [Alien(x, y) for x, y in coordinates]

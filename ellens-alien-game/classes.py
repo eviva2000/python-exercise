@@ -20,14 +20,16 @@ class Alien:
     
     total_aliens_created = 0
 
-    def __init__(self, location):
-        self.x_coordinate = location[0]
-        self.y_coordinate = location[1]
+    def __init__(self, x_coordinate, y_coordinate):
+        self.x_coordinate = x_coordinate
+        self.y_coordinate = y_coordinate
         self.health = 3
         Alien.total_aliens_created += 1
 
 
 def new_aliens_collection(coordinates):
-    return [Alien(location) for location in coordinates]
+    return [Alien(x, y) for x, y in coordinates]
 
-    
+
+alien = Alien(2, 0)
+print(alien.x_coordinate)

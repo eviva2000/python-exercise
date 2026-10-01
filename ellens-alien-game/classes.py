@@ -29,6 +29,16 @@ class Alien:
     def hit(self):
         self.health = max(0, self.health - 1)
 
+    def is_alive(self):
+        return self.health > 0
+
+    def teleport(self, new_x_coordinate, new_y_coordinate):
+        self.x_coordinate = new_x_coordinate
+        self.y_coordinate = new_y_coordinate
+
+    def collision_detection(self, other):
+        pass
+
 
 def new_aliens_collection(coordinates):
     return [Alien(x, y) for x, y in coordinates]
